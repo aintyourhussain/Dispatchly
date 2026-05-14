@@ -6,11 +6,14 @@ import {
   ShieldCheck,
   Globe,
   ArrowRight,
+  Menu,
+  X
 } from 'lucide-react';
   import { useState } from "react";
 export default function DispatchlyWebsite() {
   const [loading, setLoading] = useState(false);
 const [showSuccess, setShowSuccess] = useState(false);
+const [menuOpen, setMenuOpen] = useState(false);
 const [formData, setFormData] = useState({
   name: "",
   email: "",
@@ -175,8 +178,45 @@ const handleSubmit = async (e) => {
               Book Consultation
             </a>
           </div>
+          <button
+  className="lg:hidden text-blue-950"
+  onClick={() => setMenuOpen(!menuOpen)}
+>
+  {menuOpen ? <X size={30} /> : <Menu size={30} />}
+</button>
         </div>
       </nav>
+      {menuOpen && (
+  <div className="lg:hidden bg-white border-t border-blue-100 px-6 py-6 space-y-4 text-blue-950 font-semibold shadow-lg">
+    
+    <a href="#home" className="block">
+      Home
+    </a>
+
+    <a href="#services" className="block">
+      Services
+    </a>
+
+    <a href="#about" className="block">
+      About
+    </a>
+
+    <a href="#contact" className="block">
+      Contact
+    </a>
+
+    <a href="#pricing" className="block">
+      Pricing
+    </a>
+
+    <a
+      href="#contact"
+      className="block bg-blue-900 text-white text-center py-3 rounded-2xl"
+    >
+      Book Consultation
+    </a>
+  </div>
+)}
 
 <section
   id="home"
