@@ -1,4 +1,3 @@
-import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import {
   Phone,
   Mail,
@@ -6,14 +5,14 @@ import {
   ShieldCheck,
   Globe,
   ArrowRight,
-  Menu,
-  X
 } from 'lucide-react';
-  import { useState } from "react";
+import { useState } from "react";
+import Header from './Header.jsx'
+import Footer from './Footer.jsx'
 export default function DispatchlyWebsite() {
   const [loading, setLoading] = useState(false);
 const [showSuccess, setShowSuccess] = useState(false);
-const [menuOpen, setMenuOpen] = useState(false);
+
 const [formData, setFormData] = useState({
   name: "",
   email: "",
@@ -119,186 +118,89 @@ const handleSubmit = async (e) => {
   ];
 
   return (
-    <div className="min-h-screen bg-white text-gray-800 font-sans scroll-smooth">
+    <div className="min-h-screen bg-white text-gray-800 font-sans scroll-smooth overflow-x-hidden">
       {showSuccess && (
   <div className="fixed top-6 right-6 bg-green-600 text-white px-6 py-4 rounded-2xl shadow-xl z-50">
     ✔ Submitted successfully!
   </div>
 )}
-      {/* Navbar */}
-      <nav className="bg-white/95 backdrop-blur-lg border-b border-blue-100 px-6 lg:px-10 py-5 sticky top-0 z-50 shadow-sm">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-2xl overflow-hidden">
-  <img
-    src="/logo.jpg"
-    alt="Dispatchly Logo"
-    className="w-full h-full object-cover"
-  />
-</div>
+      <Header />
 
-            <div>
-            <h1 className="text-3xl font-logo font-extrabold tracking-tight tracking-wide">
-  <span className="text-blue-950">DISPATCH</span>
-  <span className="text-blue-400">LY</span>
-</h1>
-              <p className="text-sm text-blue-950 font-medium">
-                Truck Dispatching Solutions
-              </p>
+      {/* Home / Hero */}
+      <section id="home" className="relative min-h-[calc(100vh-5rem)] py-24 flex items-center text-white px-6 md:px-10 overflow-hidden">
+        <div className="absolute inset-0">
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: "url('/hero.jpeg')" }}
+          />
+          <div className="absolute inset-0 bg-slate-950/80" />
+          <div className="absolute -top-10 left-10 w-36 h-36 rounded-full bg-blue-400/20 blur-3xl animate-float" />
+          <div className="absolute bottom-10 right-10 w-60 h-60 rounded-full bg-cyan-400/15 blur-3xl animate-float animation-delay-2000" />
+        </div>
+
+        {/* OVERLAY */}
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-950/85 via-blue-900/75 to-blue-700/70" />
+
+        {/* CONTENT */}
+        <div className="relative z-10 max-w-7xl mx-auto grid gap-12 items-center lg:grid-cols-2">
+          <div>
+            <div className="inline-flex items-center gap-2 bg-white/10 border border-white/10 px-5 py-2 rounded-full text-sm mb-8">
+              <Truck size={18} />
+              Trusted Dispatch Services Across USA
+            </div>
+
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+              Reliable Dispatch Services For Trucking Companies
+            </h2>
+
+            <p className="text-base sm:text-lg text-blue-100 leading-relaxed mb-10 max-w-2xl">
+              Dispatchly helps owner operators and trucking companies maximize earnings with premium dispatching, broker communication, route planning, and 24/7 operational support.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 mb-10">
+              <a href="#contact" className="w-full sm:w-auto bg-white text-blue-950 px-8 py-4 rounded-2xl font-semibold shadow-xl hover:scale-105 transition duration-300 animate-fade-up">Get Started</a>
+              <a href="tel:7866612071" className="w-full sm:w-auto border border-white/40 px-8 py-4 rounded-2xl font-semibold hover:bg-white hover:text-blue-950 transition duration-300 animate-fade-up">Call Now</a>
+            </div>
+
+            <div className="mt-10 grid gap-4 sm:grid-cols-3">
+              {[
+                { label: 'Loads Booked', value: '300+' },
+                { label: '24/7 Support', value: 'Always On' },
+                { label: 'Carrier Growth', value: '100% Focus' },
+              ].map((item) => (
+                <div key={item.label} className="bg-white/10 border border-white/10 rounded-3xl p-6 text-center backdrop-blur-xl shadow-lg">
+                  <p className="text-3xl font-bold text-white mb-2">{item.value}</p>
+                  <p className="text-sm text-blue-100">{item.label}</p>
+                </div>
+              ))}
             </div>
           </div>
 
-          <div className="hidden lg:flex items-center gap-8 text-sm font-semibold text-blue-950">
-            <a href="#home" className="hover:text-blue-600 transition">
-              Home
-            </a>
-            <a href="#services" className="hover:text-blue-600 transition">
-              Services
-            </a>
-            <a href="#about" className="hover:text-blue-600 transition">
-              About
-            </a>
-            <a href="#contact" className="hover:text-blue-600 transition">
-              Contact
-            </a>
-            <a href="#pricing" className="hover:text-blue-600 transition">
-              Pricing
-            </a>
-            <a href="#privacy" className="hover:text-blue-600 transition">
-              Privacy
-            </a>
-            <a href="#terms" className="hover:text-blue-600 transition">
-              Terms
-            </a>
+          <div className="mt-10 lg:mt-0 bg-white/10 backdrop-blur-xl rounded-[35px] p-8 md:p-10 border border-white/10 shadow-2xl">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div className="bg-white rounded-3xl p-6 text-blue-950 shadow-lg">
+                <h3 className="text-4xl font-bold">24/7</h3>
+                <p className="text-sm mt-2">Dispatch Support</p>
+              </div>
 
-            <a
-              href="#contact"
-              className="bg-blue-900 hover:bg-blue-800 text-white px-6 py-3 rounded-2xl shadow-lg transition"
-            >
-              Book Consultation
-            </a>
+              <div className="bg-white rounded-3xl p-6 text-blue-950 shadow-lg">
+                <h3 className="text-4xl font-bold">Top</h3>
+                <p className="text-sm mt-2">Paying Loads</p>
+              </div>
+
+              <div className="bg-white rounded-3xl p-6 text-blue-950 shadow-lg">
+                <h3 className="text-4xl font-bold">Fast</h3>
+                <p className="text-sm mt-2">Broker Setup</p>
+              </div>
+
+              <div className="bg-white rounded-3xl p-6 text-blue-950 shadow-lg">
+                <h3 className="text-4xl font-bold">USA</h3>
+                <p className="text-sm mt-2">Nationwide Coverage</p>
+              </div>
+            </div>
           </div>
-          <button
-  className="lg:hidden text-blue-950"
-  onClick={() => setMenuOpen(!menuOpen)}
->
-  {menuOpen ? <X size={30} /> : <Menu size={30} />}
-</button>
         </div>
-      </nav>
-      {menuOpen && (
-  <div className="lg:hidden bg-white border-t border-blue-100 px-6 py-6 space-y-4 text-blue-950 font-semibold shadow-lg">
-    
-    <a href="#home" className="block">
-      Home
-    </a>
-
-    <a href="#services" className="block">
-      Services
-    </a>
-
-    <a href="#about" className="block">
-      About
-    </a>
-
-    <a href="#contact" className="block">
-      Contact
-    </a>
-
-    <a href="#pricing" className="block">
-      Pricing
-    </a>
-
-    <a
-      href="#contact"
-      className="block bg-blue-900 text-white text-center py-3 rounded-2xl"
-    >
-      Book Consultation
-    </a>
-  </div>
-)}
-
-<section
-  id="home"
-  className="relative min-h-[90vh] flex items-center text-white px-6 overflow-hidden"
->
-  {/* BACKGROUND IMAGE */}
-  <div className="absolute inset-0">
-    <img
-      src="/hero.jpeg"
-      alt="Dispatchly Logistics"
-      className="w-full h-full object-cover"
-    />
-  </div>
-
-  {/* OVERLAY */}
-  <div className="absolute inset-0 bg-gradient-to-r from-blue-950/90 via-blue-900/80 to-blue-700/70" />
-
-  {/* GLOW */}
-  <div className="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-blue-400/20 blur-3xl rounded-full" />
-
-  {/* CONTENT */}
-  <div className="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
-    
-    {/* LEFT SIDE */}
-    <div>
-      <div className="inline-flex items-center gap-2 bg-white/10 border border-white/10 px-5 py-2 rounded-full text-sm mb-8">
-        <Truck size={18} />
-        Trusted Dispatch Services Across USA
-      </div>
-
-      <h2 className="text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
-        Reliable Dispatch Services For Trucking Companies
-      </h2>
-
-      <p className="text-lg text-blue-100 leading-relaxed mb-10 max-w-2xl">
-        Dispatchly helps owner operators and trucking companies maximize earnings with premium dispatching, broker communication, route planning, and 24/7 operational support.
-      </p>
-
-      <div className="flex flex-wrap gap-5">
-        <a
-          href="#contact"
-          className="bg-white text-blue-950 px-8 py-4 rounded-2xl font-semibold shadow-xl hover:scale-105 transition"
-        >
-          Get Started
-        </a>
-
-        <a
-          href="tel:7866612071"
-          className="border border-white/40 px-8 py-4 rounded-2xl font-semibold hover:bg-white hover:text-blue-950 transition"
-        >
-          Call Now
-        </a>
-      </div>
-    </div>
-
-    {/* RIGHT SIDE */}
-    <div className="bg-white/10 backdrop-blur-xl rounded-[35px] p-10 border border-white/10 shadow-2xl">
-      <div className="grid grid-cols-2 gap-6">
-        <div className="bg-white rounded-3xl p-7 text-blue-950 shadow-lg">
-          <h3 className="text-4xl font-bold">24/7</h3>
-          <p className="text-sm mt-2">Dispatch Support</p>
-        </div>
-
-        <div className="bg-white rounded-3xl p-7 text-blue-950 shadow-lg">
-          <h3 className="text-4xl font-bold">Top</h3>
-          <p className="text-sm mt-2">Paying Loads</p>
-        </div>
-
-        <div className="bg-white rounded-3xl p-7 text-blue-950 shadow-lg">
-          <h3 className="text-4xl font-bold">Fast</h3>
-          <p className="text-sm mt-2">Broker Setup</p>
-        </div>
-
-        <div className="bg-white rounded-3xl p-7 text-blue-950 shadow-lg">
-          <h3 className="text-4xl font-bold">USA</h3>
-          <p className="text-sm mt-2">Nationwide Coverage</p>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
+      </section>
 
       {/* Services */}
       <section id="services" className="py-28 px-6 bg-gray-50">
@@ -595,180 +497,9 @@ const handleSubmit = async (e) => {
   </div>
 </section>
           
-      {/* Privacy */}
-      <section id="privacy" className="py-28 px-6 bg-white border-t border-gray-200">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-blue-950 mb-5">
-              Privacy Policy
-            </h2>
+      {/* privacy/terms moved to dedicated pages */}
 
-            <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-              Dispatchly values customer privacy and protects personal and business information.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {[
-              {
-                title: 'Information We Collect',
-                text: 'We may collect names, phone numbers, email addresses, MC details, truck information, and business details when users contact Dispatchly.',
-              },
-              {
-                title: 'SMS Communication',
-                text: 'Users who provide their phone number consent to receive dispatch updates and operational notifications through SMS communication.',
-              },
-              {
-                title: 'Data Security',
-                text: 'Dispatchly uses administrative and technical safeguards to protect customer information from unauthorized access.',
-              },
-              {
-                title: 'Third Party Sharing',
-                text: 'Dispatchly does not sell customer information. Data may only be shared when operationally necessary.',
-              },
-              {
-                title: 'Opt-Out Rights',
-                text: 'Users may unsubscribe from SMS communication anytime by replying STOP. Assistance is available by replying HELP.',
-              },
-              {
-                title: 'Contact Information',
-                text: 'Questions regarding this Privacy Policy can be directed to dispatchlyllc@gmail.com.',
-              },
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="bg-gradient-to-br from-white to-blue-50 rounded-[30px] p-8 shadow-lg border border-blue-100"
-              >
-                <h3 className="text-2xl font-bold text-blue-950 mb-5">
-                  {item.title}
-                </h3>
-
-                <p className="text-gray-600 leading-relaxed">{item.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Terms */}
-      <section id="terms" className="py-28 px-6 bg-gray-50 border-t border-gray-200">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-blue-950 mb-5">
-              Terms & Conditions
-            </h2>
-
-            <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-              By using Dispatchly services, users agree to the following terms and communication policies.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {[
-              {
-                title: 'Services',
-                text: 'Dispatchly provides truck dispatching and logistics support services for owner operators and trucking companies.',
-              },
-              {
-                title: 'Communication Consent',
-                text: 'Users agree to receive calls, emails, and SMS related to dispatch operations and support.',
-              },
-              {
-                title: 'Message Terms',
-                text: 'Message frequency varies depending on operational requirements. Message and data rates may apply.',
-              },
-              {
-                title: 'Liability',
-                text: 'Dispatchly is not responsible for operational delays or third-party service interruptions.',
-              },
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-[30px] p-8 shadow-lg border border-blue-100"
-              >
-                <h3 className="text-2xl font-bold text-blue-950 mb-5">
-                  {item.title}
-                </h3>
-
-                <p className="text-gray-600 leading-relaxed">{item.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-gradient-to-r from-blue-950 to-blue-900 text-blue-100 pt-20 pb-10 px-6">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-10 border-b border-white/10 pb-14">
-          <div>
-            <h3 className="text-3xl font-bold text-white mb-6">Dispatchly</h3>
-            <p className="text-sm text-blue-200 leading-relaxed">
-              Elite truck dispatch services designed to maximize profits and simplify operations for owner operators and trucking companies.
-            </p>
-          </div>
-
-          <div>
-            <h4 className="text-xl font-bold text-white mb-6">Quick Links</h4>
-
-            <div className="space-y-4 text-sm">
-              <a href="#home" className="block hover:text-white transition">
-                Home
-              </a>
-              <a href="#services" className="block hover:text-white transition">
-                Services
-              </a>
-              <a href="#about" className="block hover:text-white transition">
-                About
-              </a>
-              <a href="#contact" className="block hover:text-white transition">
-                Contact
-              </a>
-            </div>
-          </div>
-
-          <div>
-            <h4 className="text-xl font-bold text-white mb-6">Contact</h4>
-
-            <div className="space-y-4 text-sm text-blue-100">
-              <p>dispatchlyllc@gmail.com</p>
-              <p>786 6612071</p>
-              <p>Miami, Florida</p>
-            </div>
-          </div>
-
-          <div>
-            <h4 className="text-xl font-bold text-white mb-6">Follow Us</h4>
-
-            <div className="flex gap-4">
-              <div className="w-12 h-12 rounded-2xl bg-white/10 hover:bg-white hover:text-blue-950 transition flex items-center justify-center cursor-pointer">
-                <FaFacebookF />
-              </div>
-
-              <div className="w-12 h-12 rounded-2xl bg-white/10 hover:bg-white hover:text-blue-950 transition flex items-center justify-center cursor-pointer">
-                <FaInstagram />
-              </div>
-
-              <div className="w-12 h-12 rounded-2xl bg-white/10 hover:bg-white hover:text-blue-950 transition flex items-center justify-center cursor-pointer">
-                <FaLinkedinIn />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="max-w-7xl mx-auto pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-blue-200">
-          <p>© 2026 Dispatchly. All rights reserved.</p>
-
-          <div className="flex gap-6">
-            <a href="#privacy" className="hover:text-white transition">
-              Privacy Policy
-            </a>
-
-            <a href="#terms" className="hover:text-white transition">
-              Terms & Conditions
-            </a>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
