@@ -418,7 +418,7 @@ const handleSubmit = async (e) => {
                       <p className="text-sm uppercase tracking-wide text-blue-200">
                         Phone Number
                       </p>
-                      <p className="text-lg font-medium">786 6612071</p>
+                      <p className="text-lg font-medium">(786)661-2071</p>
                     </div>
                   </div>
 
