@@ -38,6 +38,10 @@ body {
   animation: float 8s ease-in-out infinite;
 }
 
+section {
+  scroll-margin-top: 6rem;
+}
+
 .animate-fade-up {
   animation: fadeUp 0.9s ease-out both;
 }
@@ -49,5 +53,7 @@ body {
 @layer utilities {
   .font-logo {
     font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
   }
 }

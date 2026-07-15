@@ -149,11 +149,11 @@ const handleSubmit = async (e) => {
               Trusted Dispatch Services Across USA
             </div>
 
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight mb-6">
               Reliable Dispatch Services For Trucking Companies
             </h2>
 
-            <p className="text-base sm:text-lg text-blue-100 leading-relaxed mb-10 max-w-2xl">
+            <p className="text-sm sm:text-base text-blue-100 leading-relaxed mb-10 max-w-2xl">
               Dispatchly helps owner operators and trucking companies maximize earnings with premium dispatching, broker communication, route planning, and 24/7 operational support.
             </p>
 
@@ -206,11 +206,11 @@ const handleSubmit = async (e) => {
       <section id="services" className="py-28 px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
-            <h2 className="text-5xl font-bold text-blue-950 mb-5">
+            <h2 className="text-3xl sm:text-4xl font-bold text-blue-950 mb-5">
               Our Dispatch Services
             </h2>
 
-            <p className="text-gray-600 max-w-3xl mx-auto text-lg leading-relaxed">
+            <p className="text-gray-600 max-w-3xl mx-auto text-base leading-relaxed">
               Dispatchly delivers premium truck dispatching solutions designed to increase profits, reduce downtime, and simplify operations.
             </p>
           </div>
@@ -246,11 +246,11 @@ const handleSubmit = async (e) => {
       <section id="about" className="py-28 px-6 bg-white">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-5xl font-bold text-blue-950 mb-8">
+            <h2 className="text-3xl sm:text-4xl font-bold text-blue-950 mb-8">
               Why Choose Dispatchly?
             </h2>
 
-            <p className="text-gray-700 leading-relaxed mb-8 text-lg">
+            <p className="text-gray-700 leading-relaxed mb-8 text-base sm:text-lg">
               Dispatchly is committed to helping truck drivers and carriers operate efficiently while maximizing profits through premium dispatching and professional communication.
             </p>
 
@@ -298,11 +298,11 @@ const handleSubmit = async (e) => {
       <section id="contact" className="py-28 px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-blue-950 mb-5">
+            <h2 className="text-3xl sm:text-4xl font-bold text-blue-950 mb-5">
               Get In Touch With Dispatchly
             </h2>
 
-            <p className="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed">
+            <p className="text-gray-600 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
               Ready to grow your trucking business? Submit your information and our dispatch team will contact you shortly.
             </p>
           </div>
@@ -463,13 +463,13 @@ const handleSubmit = async (e) => {
       {/* Pricing */}
 <section
   id="pricing"
-  className="py-28 px-6 bg-gradient-to-r from-blue-950 to-blue-700 text-white">
+  className="py-20 sm:py-24 px-6 bg-gradient-to-r from-blue-950 to-blue-700 text-white">
   <div className="max-w-7xl mx-auto text-center">
-<h2 className="text-5xl font-bold mb-5">
+<h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5">
   Flexible Pricing Built For Every Carrier
 </h2>
 
-<p className="text-lg max-w-4xl mx-auto mb-16 leading-relaxed text-blue-100">
+<p className="text-base sm:text-lg max-w-4xl mx-auto mb-16 leading-relaxed text-blue-100">
   Whether you operate a single truck or manage a growing fleet, Dispatchly
   offers reliable dispatch solutions with simple pricing, professional support,
   and no hidden fees.

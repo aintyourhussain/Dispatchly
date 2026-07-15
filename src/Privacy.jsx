@@ -6,15 +6,15 @@ export default function Privacy() {
   return (
     <div className="min-h-screen bg-white text-gray-800 font-sans">
       <Header />
-      <section className="py-20 sm:py-24 px-4 sm:px-6 md:px-8 bg-white border-t border-gray-200">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-4xl sm:text-5xl font-bold text-blue-950 mb-4">Privacy Policy</h2>
+      <section className="py-16 sm:py-20 px-4 sm:px-6 md:px-8 bg-white border-t border-gray-200">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-10 sm:mb-14">
+            <h2 className="text-3xl sm:text-4xl font-bold text-blue-950 mb-3">Privacy Policy</h2>
 
-            <p className="text-gray-600 text-base sm:text-lg max-w-3xl mx-auto">Dispatchly values customer privacy and protects personal and business information.</p>
+            <p className="text-gray-600 text-sm sm:text-base max-w-2xl mx-auto">Dispatchly values customer privacy and protects personal and business information.</p>
           </div>
 
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-8">
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:gap-6">
             {[
               {
                 title: 'Information We Collect',
